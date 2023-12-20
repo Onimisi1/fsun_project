@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>FSUN</title>
+
+</head>
+<body>
+
+    <div id="loadingModal" class="modal" style="">
+        <div class="modal-content">
+          <p>Loading...</p>
+        </div>
+    </div>
+      
+
+    <form id="form_data" action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" value="Upload">Upload</button>
+
+        <p style="color: red;">Please make sure you are uploading the correct format !</p>
+    </form>
+
+
+</body>
+
+<script src="{% static 'js/app.js' %}"></script>
+
+</html>
